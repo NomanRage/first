@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <math.h>
+int
+main ()
+{
+  char shape;
+  float area;
+  printf ("Enter The Shape You want to compute are for:\n");
+  printf
+    ("'c' for circle \n'r' for Rectrange\n't' for triangle\nEnter Your credential here:");
+  scanf ("%c", &shape);
+  switch (shape)
+    {
+    case 'C' | 'c':
+      printf ("Enter radius of circle:");
+      float radius;
+      scanf ("%f", &radius);
+      area = 3.1417 * radius * radius;
+      printf ("The area of circle is,%0.2f", area);
+      break;
+
+    case 'R' | 'r':
+      printf ("Enter length of rectrange:");
+      float l, b;
+      scanf ("%f", &l);
+      printf ("Enter width of rectrange:");
+      scanf ("%f", &b);
+      area = l * b;
+      printf ("The area of rectrange is,%0.2f", area);
+      break;
+
+    case 'T' | 't':
+      printf ("Enter first side of triangle:");
+      float so, sf, sl, s, temparea;
+      scanf ("%f", &so);
+      printf ("Enter first side of triangle:");
+      scanf ("%f", &sf);
+      printf ("Enter first side of triangle:");
+      scanf ("%f", &sl);
+      s = (so + sf + sl) / 2;
+      temparea = (s * (s - so) * (s - sf) * (s - sl));
+      area = sqrt (temparea);
+      printf ("The area of required traingle is,%f", area);
+      break;
+
+    default:
+      printf ("Invalid input, please choose b/w c,r,t");
+    }
+
+  return 0;
+}
